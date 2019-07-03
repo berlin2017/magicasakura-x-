@@ -1,0 +1,20 @@
+[
+  {
+    "name": "blue",
+    "color": "#2196F3",
+    "dark": "#1565C0",
+    "trans": "#B41A78C3"
+  },
+  {
+    "name": "green",
+    "color": "#4CAF50",
+    "dark": "#2E7D32",
+    "trans": "#994CAF50"
+  },
+  {
+    "name": "red",
+    "color": "#F44336",
+    "dark": "#C62828",
+    "trans": "#99F44336"
+  }
+]

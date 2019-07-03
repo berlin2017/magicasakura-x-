@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'maven-publish'
+
+def libraryGroupId = 'cn.lonsun.android'
+def libraryArtifactId = 'magicasakura-x'
+def libraryVersion = '1.0.0'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode 1
+        versionName version
+    }
+    sourceSets{
+        main.res.srcDirs 'res', 'res-public'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.vectordrawable:vectordrawable:$vectordrawable_version"
+    implementation ("com.google.android.material:material:$material_version"){
+        exclude group:"androidx.appcompat:appcompat"
+    }
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.core:core:1.2.0-alpha02"
+    implementation "com.google.code.gson:gson:$gson_version"
+
+}
+
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            groupId libraryGroupId
+            version libraryVersion
+            artifactId libraryArtifactId
+
+            artifact("$buildDir/outputs/aar/${artifactId}-release.aar")
+        }
+    }
+}
+// Configure artifactory (for publishing dev)
+//
+// Based on NebulaOJOPublishingPlugin (from nebula-bintray-plugin)
+artifactory {
+    contextUrl = 'http://192.168.1.210/artifactory/'
+
+    publish {
+        repository {
+            repoKey = 'mob-release'
+
+            if (project.hasProperty('artifactory_username')) {
+                username = project.property('artifactory_username')
+                password = project.property('artifactory_password')
+            }
+        }
+
+        defaults {
+            publications('aar')
+            publishArtifacts = true
+
+            properties = ['qa.level': 'basic', 'q.os': 'android', 'dev.team': 'core']
+            publishPom = true
+        }
+    }
+}

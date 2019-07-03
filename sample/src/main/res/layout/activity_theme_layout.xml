@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * @Copyright © 2005-2019 安徽龙讯信息科技有限公司
+  ~  * @FileName: activity_theme_layout.xml
+  ~  * @Description: ${DESCRIPTION}
+  ~  * @Author: lpp
+  ~  * @Date: 19-3-15 上午10:54
+  ~  */
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <cn.lonsun.magicasakura.widgets.TintToolbar
+            android:background="@color/theme_color_primary_dark"
+            app:title="@string/app_name"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="?android:attr/actionBarSize"/>
+
+    <cn.lonsun.magicasakura.widgets.TintConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/theme_color_primary"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <cn.lonsun.magicasakura.widgets.TintButton
+                android:id="@+id/green"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/theme_color_primary_dark"
+                android:text="green"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/day"/>
+
+        <cn.lonsun.magicasakura.widgets.TintButton
+                android:id="@+id/night"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/theme_color_primary_dark"
+                android:text="night"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/green"/>
+
+        <cn.lonsun.magicasakura.widgets.TintTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="文字颜色"
+                android:textColor="@color/theme_color_primary_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <cn.lonsun.magicasakura.widgets.TintButton
+                android:id="@+id/day"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/theme_color_primary_dark"
+                android:text="red"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+    </cn.lonsun.magicasakura.widgets.TintConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
