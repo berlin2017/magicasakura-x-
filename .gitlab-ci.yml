@@ -1,0 +1,7 @@
+build_push:
+  stage: deploy
+  script:
+    - ./gradlew :magicasakura-x:build
+    - ./gradlew :magicasakura-x:Artifactorypublish
+  only:
+    - master
