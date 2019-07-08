@@ -29,13 +29,21 @@ MagicaSakura-x是一个Android多主题库，支持每日丰富多彩的主题�
  
 
 ## Gradle Dependency
+```gradle
 allprojects {
     repositories {
         maven { url 'http://192.168.1.210/artifactory/mob-release' }
     }
 }  
+```
 
-其次添加依赖    implementation "cn.lonsun.android:lsrefresh:$lsrefresh_version"
+
+其次添加依赖  
+```gradle
+implementation "cn.lonsun.android:magicasakura-x:$magicasakura_version"
+
+```
+
 $lsrefresh_version具体版本请去192.168.1.210中查看  
 
 ## 用法
