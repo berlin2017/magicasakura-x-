@@ -21,7 +21,7 @@ MagicaSakura-x是一个Android多主题库，支持每日丰富多彩的主题�
 
 ## Demo
 
-![ScreenShot.gif](https://github.com/xyczero/MagicaSakura/blob/master/screenshot/magicasakura.gif)
+![ScreenShot.gif](magicasakura.gif)
  
  You can download the lastest sample apk from Google Play.
 
