@@ -1,4 +1,3 @@
-
 ## MagicaSakura-x
 
 MagicaSakura-x是一个Android多主题库，支持每日丰富多彩的主题和夜晚主题。
@@ -21,12 +20,8 @@ MagicaSakura-x是一个Android多主题库，支持每日丰富多彩的主题�
 
 ## Demo
 
-![ScreenShot.gif](magicasakura.gif)
- 
- You can download the lastest sample apk from Google Play.
+![magicasakura](http://git.lonsun.cn/mobile/Base-Android-Project/uploads/2cae651b5702a95a8d822b2a6d90015a/magicasakura.gif)
 
-<a href="https://play.google.com/store/apps/details?id=com.bilibili.magicasakurademo"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60" data-canonical-src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" style="max-width:100%;"></a>
- 
 
 ## Gradle Dependency
 ```gradle
