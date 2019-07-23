@@ -200,22 +200,22 @@ $lsrefresh_version具体版本请去192.168.1.210中查看
     tintImageView.setImageTintList(R.color.selector_color_lock);
     ```
     
-- **STEP4** :
+  - **STEP4** :
   
     该库提供实用程序类ThemeUtils以满足某些特殊需求或您自己的自定义小部件。
-    
-  实用程序类ThemeUtils主要提供着色drawable的方法，并将当前主题包括colorStateList和color转换为颜色变量（在步骤1中定义）。
+        
+      实用程序类ThemeUtils主要提供着色drawable的方法，并将当前主题包括colorStateList和color转换为颜色变量（在步骤1中定义）。
     
     ```java
     // R.color.selector_color.lock is a colorStateList, the method of ThemeUtils.getThemeColorStateList return the colorStateList with the current theme.
     ThemeUtils.getThemeColorStateList(context, R.color.selector_color.lock);
     ThemeUtils.getThemeColorStateList(context, context.getResource().getColorStateList(R.color.selector_color.lock));
     ```
-- **STEP5** :  
+  - **STEP5** :  
 
-  - 构建夜间资源目录，它们对应于默认资源目录，并将独立的夜间xml放入相应的目录中，例如values-night / values，color-night / night ...
-  
-  - 定义一系列颜色变量，包括值相同但值不同的值 - 夜晚/值，然后使用颜色变量编写一次xml以适应夜间主题。  
+      - 构建夜间资源目录，它们对应于默认资源目录，并将独立的夜间xml放入相应的目录中，例如values-night / values，color-night / night ...
+      
+     - 定义一系列颜色变量，包括值相同但值不同的值 - 夜晚/值，然后使用颜色变量编写一次xml以适应夜间主题。  
  
   ```java
   // in value/color.xml
@@ -231,8 +231,8 @@ $lsrefresh_version具体版本请去192.168.1.210中查看
   <color name="theme_color_secondary">#057748</color> // special used for night theme primary color
   ```
    
-- **STEP6** :
+  - **STEP6** :
   
-  即将切换每日丰富多彩的主题，您可以直接调用主线程中的Theme.refreshUI方法，此方法还提供可选的回调参数，以满足您在切换主题期间的自定义需求。
-  
-  即将切换夜间主题，当你的android支持库的版本低于23.2.0时，你可以调用ThemeUtils.updateNightMode的方法来切换夜晚和日常主题，当版本高于23.2.0时，你可以在android支持库中使用android native方法。
+      即将切换每日丰富多彩的主题，您可以直接调用主线程中的Theme.refreshUI方法，此方法还提供可选的回调参数，以满足您在切换主题期间的自定义需求。
+      
+      即将切换夜间主题，当你的android支持库的版本低于23.2.0时，你可以调用ThemeUtils.updateNightMode的方法来切换夜晚和日常主题，当版本高于23.2.0时，你可以在android支持库中使用android native方法。
