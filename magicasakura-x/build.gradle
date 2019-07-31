@@ -7,7 +7,7 @@ apply plugin: 'maven-publish'
 
 def libraryGroupId = 'cn.lonsun.android'
 def libraryArtifactId = 'magicasakura-x'
-def libraryVersion = '1.0.0'
+def libraryVersion = '1.0.1'
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION
